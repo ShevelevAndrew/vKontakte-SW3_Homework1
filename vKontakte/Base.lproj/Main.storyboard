@@ -138,17 +138,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nZ1-IJ-ZOv">
-                            <size key="itemSize" width="405" height="376"/>
+                            <size key="itemSize" width="405" height="380"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" reuseIdentifier="ForcastCell" id="Ynd-Iv-5dA" customClass="ForcastCell" customModule="vKontakte" customModuleProvider="target">
-                                <rect key="frame" x="4.5" y="0.0" width="405" height="376"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="ForcastCell" id="Ynd-Iv-5dA" customClass="ForcastCell" customModule="vKontakte" customModuleProvider="target">
+                                <rect key="frame" x="4.5" y="0.0" width="405" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="405" height="376"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="405" height="380"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="more Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo7-u3-7hP">
@@ -199,7 +199,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="635-lJ-epf">
-                                            <rect key="frame" x="0.0" y="188.5" width="405" height="94.5"/>
+                                            <rect key="frame" x="0.0" y="188.5" width="405" height="181.5"/>
                                             <gestureRecognizers/>
                                         </imageView>
                                     </subviews>
@@ -457,10 +457,10 @@
             </objects>
             <point key="canvasLocation" x="3912" y="19"/>
         </scene>
-        <!--Custom Navigation Controller-->
+        <!--Custom Navigation Controller2-->
         <scene sceneID="dFN-lM-Xcn">
             <objects>
-                <navigationController id="UbV-N4-DuH" customClass="CustomNavigationController" customModule="vKontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="UbV-N4-DuH" customClass="CustomNavigationController2" customModule="vKontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="news" id="NEe-j2-QHK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fR3-PO-LIo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -562,10 +562,10 @@
             </objects>
             <point key="canvasLocation" x="2116" y="-868"/>
         </scene>
-        <!--Custom Navigation Controller-->
+        <!--Custom Navigation Controller2-->
         <scene sceneID="ki8-g2-M4A">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iEv-N6-hi6" customClass="CustomNavigationController" customModule="vKontakte" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iEv-N6-hi6" customClass="CustomNavigationController2" customModule="vKontakte" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="group" id="Alm-Ve-CJ3">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>

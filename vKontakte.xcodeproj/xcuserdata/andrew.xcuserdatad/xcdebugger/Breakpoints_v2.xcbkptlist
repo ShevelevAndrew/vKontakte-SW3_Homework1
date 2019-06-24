@@ -51,5 +51,101 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vKontakte/Controlers/UserGroupViewController.swift"
+            timestampString = "583053140.309698"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "animateRefreshStep2()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "vKontakte.UserGroupViewController.animateRefreshStep2() -&gt; ()"
+                  moduleName = "vKontakte"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrew/Desktop/Swift2/HW9/vKontakte-Homework9/vKontakte/Controlers/UserGroupViewController.swift"
+                  timestampString = "583052814.535098"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "292"
+                  endingLineNumber = "292"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in vKontakte.UserGroupViewController.animateRefreshStep2() -&gt; ()"
+                  moduleName = "vKontakte"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrew/Desktop/Swift2/HW9/vKontakte-Homework9/vKontakte/Controlers/UserGroupViewController.swift"
+                  timestampString = "583052814.541885"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vKontakte/Controlers/UserGroupViewController.swift"
+            timestampString = "583053140.310292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "animateRefreshStep1()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "vKontakte.UserGroupViewController.animateRefreshStep1() -&gt; ()"
+                  moduleName = "vKontakte"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrew/Desktop/Swift2/HW9/vKontakte-Homework9/vKontakte/Controlers/UserGroupViewController.swift"
+                  timestampString = "583052814.557832"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in vKontakte.UserGroupViewController.animateRefreshStep1() -&gt; ()"
+                  moduleName = "vKontakte"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrew/Desktop/Swift2/HW9/vKontakte-Homework9/vKontakte/Controlers/UserGroupViewController.swift"
+                  timestampString = "583052814.563881"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "269"
+                  endingLineNumber = "269"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MyFriendsViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate{
+class MyFriendsViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
+    
     
     var friendDictionary = [String:[FriendsModel]]()
     var friendSectionTitle = [String]()
@@ -42,6 +43,16 @@ class MyFriendsViewController: UITableViewController, UISearchResultsUpdating, U
         tableView.dataSource = self
         
         addAnimation()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(doSomething), for: .valueChanged)
+        
+    }
+    @objc func doSomething(refreshControl: UIRefreshControl) {
+        print("Hello World!")
+        
+        // somewhere in your code you might need to call:
+        refreshControl.endRefreshing()
     }
     
     private func addAnimation() {

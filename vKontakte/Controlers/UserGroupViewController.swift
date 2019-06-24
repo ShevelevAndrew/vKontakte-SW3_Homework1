@@ -30,6 +30,12 @@ class UserGroupViewController: UITableViewController, UISearchResultsUpdating, U
         GroupModel(name: "Вязальщики крючком", image: UIImage(named: "group2")!),
         GroupModel(name: "Рыболовы в реке", image: UIImage(named: "group1")!),
     ]
+    var customView: UIView!
+    var labelsArray: Array<UILabel> = []
+    var isAnimating = false
+    var currentColorIndex = 0
+    var currentLabelIndex = 0
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +45,21 @@ class UserGroupViewController: UITableViewController, UISearchResultsUpdating, U
         
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: CustomTableViewCell.reuseId)
         tableView.dataSource = self
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.clear
+        refreshControl?.tintColor = UIColor.clear
+        tableView.addSubview(refreshControl!)
+        loadCustomRefreshContents()
+        refreshControl?.addTarget(self, action: #selector(doSomething), for: .valueChanged)
     }
+    
+//    @objc func doSomething(refreshControl: UIRefreshControl) {
+//        print("Hello World!")
+//
+//        // somewhere in your code you might need to call:
+//        refreshControl.endRefreshing()
+//    }
 
     func filterContentForSearchText(searchText: String) {
         if (searchController.isActive && searchController.searchBar.text != "") {
@@ -215,5 +235,121 @@ class UserGroupViewController: UITableViewController, UISearchResultsUpdating, U
         }
     }
     
+    // MARK: Custom function implementation
+    
+   override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    if refreshControl!.isRefreshing {
+            if !isAnimating {
+                doSomething()
+                animateRefreshStep1()
+            }
+        }
+    }
+    
+    
+    func loadCustomRefreshContents() {
+        let refreshContents = Bundle.main.loadNibNamed("RefreshContents", owner: self, options: nil)
+        
+        customView = refreshContents![0] as? UIView
+        customView.frame = refreshControl!.bounds
+        
+        for i in 0..<customView.subviews.count {
+            labelsArray.append(customView.viewWithTag(i + 1) as! UILabel)
+        }
+        
+        refreshControl?.addSubview(customView)
+    }
+    
+    func animateRefreshStep1() {
+        isAnimating = true
+        
+        
+        
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: { () -> Void in
+            self.labelsArray[self.currentLabelIndex].transform = CGAffineTransform(rotationAngle: CGFloat(Float.pi/4))
+            self.labelsArray[self.currentLabelIndex].textColor = self.getNextColor()
+            
+        }, completion: { (finished) -> Void in
+            
+            UIView.animate(withDuration: 0.05, delay: 0.0, options: .curveLinear, animations: { () -> Void in
+                self.labelsArray[self.currentLabelIndex].transform = CGAffineTransform.identity
+                self.labelsArray[self.currentLabelIndex].textColor = UIColor.black
+                
+            }, completion: { (finished) -> Void in
+                self.currentLabelIndex += 1
+                
+                if self.currentLabelIndex < self.labelsArray.count {
+                    self.animateRefreshStep1()
+                }
+                else {
+                    self.animateRefreshStep2()
+                }
+            })
+        })
+    }
+    
+    func animateRefreshStep2() {
+        UIView.animate(withDuration: 0.35, delay: 0.0, options: .curveLinear, animations: { () -> Void in
+            self.labelsArray[0].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.labelsArray[1].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.labelsArray[2].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.labelsArray[3].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.labelsArray[4].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.labelsArray[5].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.labelsArray[6].transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            
+        }, completion: { (finished) -> Void in
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveLinear, animations: { () -> Void in
+                self.labelsArray[0].transform = CGAffineTransform.identity
+                self.labelsArray[1].transform = CGAffineTransform.identity
+                self.labelsArray[2].transform = CGAffineTransform.identity
+                self.labelsArray[3].transform = CGAffineTransform.identity
+                self.labelsArray[4].transform = CGAffineTransform.identity
+                self.labelsArray[5].transform = CGAffineTransform.identity
+                self.labelsArray[6].transform = CGAffineTransform.identity
+                
+            }, completion: { (finished) -> Void in
+                if self.refreshControl!.isRefreshing {
+                    self.currentLabelIndex = 0
+                    self.animateRefreshStep1()
+                }
+                else {
+                    self.isAnimating = false
+                    self.currentLabelIndex = 0
+                    for i in 0..<self.labelsArray.count {
+                        self.labelsArray[i].textColor = UIColor.black
+                        self.labelsArray[i].transform = CGAffineTransform.identity
+                    }
+                }
+            })
+        })
+    }
+    
+    
+    func getNextColor() -> UIColor {
+        var colorsArray: Array<UIColor> = [UIColor.magenta, UIColor.brown, UIColor.yellow, UIColor.red, UIColor.green, UIColor.blue, UIColor.orange]
+        
+        if currentColorIndex == colorsArray.count {
+            currentColorIndex = 0
+        }
+        
+        let returnColor = colorsArray[currentColorIndex]
+        currentColorIndex += 1
+        
+        return returnColor
+    }
+    
+    
+   @objc func doSomething() {
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(endOfWork), userInfo: nil, repeats: true)
+    }
+    
+    
+    @objc func endOfWork() {
+        refreshControl!.endRefreshing()
+        
+        timer?.invalidate()
+        timer = nil
+    }
 
 }
