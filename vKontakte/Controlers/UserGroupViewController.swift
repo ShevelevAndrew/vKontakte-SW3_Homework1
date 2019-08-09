@@ -236,7 +236,7 @@ class UserGroupViewController: UITableViewController, UISearchResultsUpdating, U
     }
     
     // MARK: Custom function implementation
-    
+    // https://www.appcoda.com/custom-pull-to-refresh/
    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     if refreshControl!.isRefreshing {
             if !isAnimating {
@@ -262,8 +262,6 @@ class UserGroupViewController: UITableViewController, UISearchResultsUpdating, U
     
     func animateRefreshStep1() {
         isAnimating = true
-        
-        
         
         UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: { () -> Void in
             self.labelsArray[self.currentLabelIndex].transform = CGAffineTransform(rotationAngle: CGFloat(Float.pi/4))
@@ -341,15 +339,21 @@ class UserGroupViewController: UITableViewController, UISearchResultsUpdating, U
     
     
    @objc func doSomething() {
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(endOfWork), userInfo: nil, repeats: true)
+        if timer == nil {
+            timer = Timer.scheduledTimer(timeInterval: 5.0,
+                                     target: self,
+                                     selector: #selector(endOfWork),
+                                     userInfo: nil,
+                                     repeats: true)
+        }
     }
     
     
     @objc func endOfWork() {
         refreshControl!.endRefreshing()
         
-        timer?.invalidate()
-        timer = nil
+        //timer?.invalidate()
+        //timer = nil
     }
 
 }
