@@ -29,6 +29,7 @@
 		498EB7D2228BBAC800657B22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498EB7D1228BBAC800657B22 /* Assets.xcassets */; };
 		498EB7D5228BBAC800657B22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498EB7D3228BBAC800657B22 /* LaunchScreen.storyboard */; };
 		498EB7DD228BC49E00657B22 /* LauncheControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498EB7DC228BC49E00657B22 /* LauncheControler.swift */; };
+		498FD3BA22FD1F7C001AB0FA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FD3B922FD1F7C001AB0FA /* Session.swift */; };
 		499A982E22919ABB00356DB7 /* MyFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A982D22919ABB00356DB7 /* MyFriendsViewController.swift */; };
 		499A983022919B2400356DB7 /* FriendsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A982F22919B2400356DB7 /* FriendsCollectionViewController.swift */; };
 		499A983222919B7F00356DB7 /* UserGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A983122919B7F00356DB7 /* UserGroupViewController.swift */; };
@@ -62,6 +63,7 @@
 		498EB7D4228BBAC800657B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		498EB7D6228BBAC800657B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498EB7DC228BC49E00657B22 /* LauncheControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheControler.swift; sourceTree = "<group>"; };
+		498FD3B922FD1F7C001AB0FA /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		499A982D22919ABB00356DB7 /* MyFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsViewController.swift; sourceTree = "<group>"; };
 		499A982F22919B2400356DB7 /* FriendsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewController.swift; sourceTree = "<group>"; };
 		499A983122919B7F00356DB7 /* UserGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				498E13582296F3D900C72ECA /* FriendsModel.swift */,
 				498E135A2296F3F900C72ECA /* GroupModel.swift */,
 				490F2F7B22AF5D180020B8C9 /* NewsModel.swift */,
+				498FD3B922FD1F7C001AB0FA /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,9 +139,9 @@
 		498EB7C9228BBAC500657B22 /* vKontakte */ = {
 			isa = PBXGroup;
 			children = (
+				498FD3B822FD1E5A001AB0FA /* News */,
 				49605AAF22BB30CC004C3D6D /* Transition */,
 				499A982C2291996300356DB7 /* Controlers */,
-				498E13552296B89C00C72ECA /* Cells */,
 				498EB7CE228BBAC500657B22 /* Main.storyboard */,
 				498EB7D1228BBAC800657B22 /* Assets.xcassets */,
 				498EB7CC228BBAC500657B22 /* ViewController.swift */,
@@ -150,9 +153,18 @@
 			path = vKontakte;
 			sourceTree = "<group>";
 		};
+		498FD3B822FD1E5A001AB0FA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				490F2F7722AE5E120020B8C9 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		499A982C2291996300356DB7 /* Controlers */ = {
 			isa = PBXGroup;
 			children = (
+				498E13552296B89C00C72ECA /* Cells */,
 				49A9BD8122C09CA400320EC5 /* RefreshContents.xib */,
 				498EB7DC228BC49E00657B22 /* LauncheControler.swift */,
 				499A982D22919ABB00356DB7 /* MyFriendsViewController.swift */,
@@ -160,7 +172,6 @@
 				499A983122919B7F00356DB7 /* UserGroupViewController.swift */,
 				499A983322919BC800356DB7 /* SearchGroupViewController.swift */,
 				49CA469C229D85A8008BA1FD /* UIView-Extension.swift */,
-				490F2F7722AE5E120020B8C9 /* NewsViewController.swift */,
 			);
 			path = Controlers;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 				49605AB322BB91D2004C3D6D /* CustomSeque.swift in Sources */,
 				498EB7CB228BBAC500657B22 /* AppDelegate.swift in Sources */,
 				490F2F7A22AE5F1B0020B8C9 /* NewsCell.swift in Sources */,
+				498FD3BA22FD1F7C001AB0FA /* Session.swift in Sources */,
 				490F2F6C22AA6C900020B8C9 /* CustomTableviewCell.swift in Sources */,
 				498E13522296B04A00C72ECA /* FriendsCell.swift in Sources */,
 				490F2F7822AE5E120020B8C9 /* NewsViewController.swift in Sources */,
